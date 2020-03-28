@@ -156,6 +156,7 @@ func _on_Tahni_pressed():
 		endGame()
 
 func newGame():
+	tah = 1
 	stav = stavVect.new(100, 500, 100, 0)
 	budouciStav = stavVect.new(0, 0, 0, 0)
 	delta = stavVect.new(0, 0, 0, 0)
