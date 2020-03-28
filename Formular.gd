@@ -54,14 +54,7 @@ class budovyVect:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	stav = stavVect.new(100, 500, 100, 0)
-	budouciStav = stavVect.new(0, 0, 0, 0)
-	delta = stavVect.new(0, 0, 0, 0)
-	
-	budovy = budovyVect.new()
-	budouciBudovy = budovyVect.new()
-
-	updateView()
+	newGame()
 
 func updateView():
 	$Stav.updateData(stav)
@@ -145,13 +138,13 @@ func updateSkoreATahy():
 	$Tah.text = "Tah: " + str(tah) + " z " + str(tahMax)
 
 func _on_Pole_value_changed(value):
-	budouciBudovy.Pole = $GridContainer/Pole.value
-	budouciBudovy.Lom = $GridContainer/Lom.value
-	budouciBudovy.Kamenictvi = $GridContainer/Kamenictvi.value
-	budouciBudovy.Hostinec = $GridContainer/Hostinec.value
-	budouciBudovy.Kaple = $GridContainer/Kaple.value
-	budouciBudovy.Kostel = $GridContainer/Kostel.value
-	budouciBudovy.Katedrala = $GridContainer/Katedrala.value
+	budouciBudovy.Pole = $Stavby/Pole.value
+	budouciBudovy.Lom = $Stavby/Lom.value
+	budouciBudovy.Kamenictvi = $Stavby/Kamenictvi.value
+	budouciBudovy.Hostinec = $Stavby/Hostinec.value
+	budouciBudovy.Kaple = $Stavby/Kaple.value
+	budouciBudovy.Kostel = $Stavby/Kostel.value
+	budouciBudovy.Katedrala = $Stavby/Katedrala.value
 	updateBudouciStav()
 
 func _on_Tahni_pressed():
@@ -162,8 +155,35 @@ func _on_Tahni_pressed():
 	if tah > tahMax:
 		endGame()
 
+func newGame():
+	stav = stavVect.new(100, 500, 100, 0)
+	budouciStav = stavVect.new(0, 0, 0, 0)
+	delta = stavVect.new(0, 0, 0, 0)
+	
+	budovy = budovyVect.new()
+	budouciBudovy = budovyVect.new()
+
+	updateView()
+	
+	$Tahni.visible = true
+	$BudouciStav.visible = true
+	$Tah.visible = true
+	$Delta.visible = true
+	$Stavby.visible = true
+
+	$NovaHra.visible = false
+	$Konec.visible = false
 
 func endGame():
-		$Tahni.disabled = true
-		$BudouciStav.visible = false
-		$Tah.visible = false
+	$Tahni.visible = false
+	$BudouciStav.visible = false
+	$Tah.visible = false
+	$Delta.visible = false
+	$Stavby.visible = false
+
+	$NovaHra.visible = true
+	$Konec.visible = true
+
+
+func _on_NovaHra_pressed():
+	newGame()
