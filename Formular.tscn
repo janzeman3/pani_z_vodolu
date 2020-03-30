@@ -60,12 +60,6 @@ margin_top = 100.0
 margin_right = 699.0
 margin_bottom = 269.0
 
-[node name="Delta" parent="." instance=ExtResource( 1 )]
-margin_left = 750.0
-margin_top = 100.0
-margin_right = 999.0
-margin_bottom = 269.0
-
 [node name="Stavby" parent="." instance=ExtResource( 5 )]
 
 [node name="Tahni" type="Button" parent="."]

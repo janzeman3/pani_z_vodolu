@@ -1,7 +1,10 @@
 extends GridContainer
 
 func updateData(inStavVect):
-	$Lidi.text = str(inStavVect.Lidi)
-	$Vodolary.text = str(inStavVect.Vodolary)
-	$Obili.text = str(inStavVect.Obili)
-	$Suroviny.text = str(inStavVect.Suroviny)
+	$Stav/Lidi.text = str(inStavVect.Lidi)
+	$Stav/Vodolary.text = str(inStavVect.Vodolary)
+	$Stav/Obili.text = str(inStavVect.Obili)
+	$Stav/Suroviny.text = str(inStavVect.Suroviny)
+
+func zmenTitulek(novyTitulek):
+	$Titulek.text = novyTitulek
