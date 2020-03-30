@@ -31,6 +31,15 @@ func _on_NejakaBudova_value_changed(value):
 	budouciBudovy.Kaple = $Kaple.value
 	budouciBudovy.Kostel = $Kostel.value
 	budouciBudovy.Katedrala = $Katedrala.value
+
+	$lPoleDelta.text = str(budouciBudovy.Pole-budovy.Pole)
+	$lLomDelta.text = str(budouciBudovy.Lom-budovy.Lom)
+	$lKamenictviDelta.text = str(budouciBudovy.Kamenictvi-budovy.Kamenictvi)
+	$lHostinecDelta.text = str(budouciBudovy.Hostinec-budovy.Hostinec)
+	$lKapleDelta.text = str(budouciBudovy.Kaple-budovy.Kaple)
+	$lKostelDelta.text = str(budouciBudovy.Kostel-budovy.Kostel)
+	$lKatedralaDelta.text = str(budouciBudovy.Katedrala-budovy.Katedrala)
+	
 	emit_signal("BudovyChanged")
 
 func novaHra():

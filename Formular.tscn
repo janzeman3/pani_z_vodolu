@@ -55,10 +55,10 @@ margin_top = 100.0
 margin_bottom = 269.0
 
 [node name="BudouciStav" parent="." instance=ExtResource( 1 )]
-margin_left = 450.0
-margin_top = 100.0
-margin_right = 699.0
-margin_bottom = 269.0
+margin_left = 650.315
+margin_top = 93.5382
+margin_right = 899.315
+margin_bottom = 333.538
 
 [node name="Stavby" parent="." instance=ExtResource( 5 )]
 
