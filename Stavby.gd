@@ -24,21 +24,21 @@ class budovyVect:
 		Katedrala = inVal.Katedrala
 
 func _on_NejakaBudova_value_changed(value):
-	budouciBudovy.Pole = $Pole.value
-	budouciBudovy.Lom = $Lom.value
-	budouciBudovy.Kamenictvi = $Kamenictvi.value
-	budouciBudovy.Hostinec = $Hostinec.value
-	budouciBudovy.Kaple = $Kaple.value
-	budouciBudovy.Kostel = $Kostel.value
-	budouciBudovy.Katedrala = $Katedrala.value
+	budouciBudovy.Pole = $Pocty/Pole.value
+	budouciBudovy.Lom = $Pocty/Lom.value
+	budouciBudovy.Kamenictvi = $Pocty/Kamenictvi.value
+	budouciBudovy.Hostinec = $Pocty/Hostinec.value
+	budouciBudovy.Kaple = $Pocty/Kaple.value
+	budouciBudovy.Kostel = $Pocty/Kostel.value
+	budouciBudovy.Katedrala = $Pocty/Katedrala.value
 
-	$lPoleDelta.text = str(budouciBudovy.Pole-budovy.Pole)
-	$lLomDelta.text = str(budouciBudovy.Lom-budovy.Lom)
-	$lKamenictviDelta.text = str(budouciBudovy.Kamenictvi-budovy.Kamenictvi)
-	$lHostinecDelta.text = str(budouciBudovy.Hostinec-budovy.Hostinec)
-	$lKapleDelta.text = str(budouciBudovy.Kaple-budovy.Kaple)
-	$lKostelDelta.text = str(budouciBudovy.Kostel-budovy.Kostel)
-	$lKatedralaDelta.text = str(budouciBudovy.Katedrala-budovy.Katedrala)
+	$Pocty/lPoleDelta.text = str(budouciBudovy.Pole-budovy.Pole)
+	$Pocty/lLomDelta.text = str(budouciBudovy.Lom-budovy.Lom)
+	$Pocty/lKamenictviDelta.text = str(budouciBudovy.Kamenictvi-budovy.Kamenictvi)
+	$Pocty/lHostinecDelta.text = str(budouciBudovy.Hostinec-budovy.Hostinec)
+	$Pocty/lKapleDelta.text = str(budouciBudovy.Kaple-budovy.Kaple)
+	$Pocty/lKostelDelta.text = str(budouciBudovy.Kostel-budovy.Kostel)
+	$Pocty/lKatedralaDelta.text = str(budouciBudovy.Katedrala-budovy.Katedrala)
 	
 	emit_signal("BudovyChanged")
 
@@ -117,3 +117,13 @@ func updateBudouciStav(stav, budouciStav):
 
 func _ready():
 	novaHra()
+
+
+func _on_Button_pressed():
+	$Pocty/Pole.value = budovy.Pole
+	$Pocty/Lom.value = budovy.Lom
+	$Pocty/Kamenictvi.value = budovy.Kamenictvi
+	$Pocty/Hostinec.value = budovy.Hostinec
+	$Pocty/Kaple.value = budovy.Kaple
+	$Pocty/Kostel.value = budovy.Kostel
+	$Pocty/Katedrala.value = budovy.Katedrala
